@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --baseColor: black;
+}
+
+html,body{
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+}
+
+main{
+  width: min(960px, 100%);
+  padding: 1em;
+  margin:0 auto;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap:2em;
+}
+
+form label{
+  display: flex;
+  flex-direction: column;
+  gap:1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  border: dashed 4px;
+  border-color: #eee;
+  
+  text-align: center;
+  padding: 2rem;
+  color: #222;
+  transition: border-color 0.3s linear;
+}
+
+form label:hover{
+  border-color: red;
+}
+
+form svg{
+  height: 4rem;
+}
+form svg path{
+  fill: #eee;
+  stroke: #eee;
+}
+
+
+[type="text"],[type="email"],[type="password"], textarea,[type="file"]{
+  border: solid 1px rgb(200,200,200);
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+}
+
+[type="submit"]{
+  background-color: var(--baseColor);
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: uppercase;
+  color: white;
+  border: 0;
+  width: 100%;
+  display: inline-block;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+span.loading{
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' version='1.1' width='512' height='512' x='0' y='0' viewBox='0 0 512.005 512.005' style='enable-background:new 0 0 512 512' xml:space='preserve' class=''%3E%3Cg%3E%3Cpath xmlns='http://www.w3.org/2000/svg' d='m511.033 361.523c-6.735-50.127-51.666-90.52-104.04-90.52h-.73c-51.61 0-70.78-58.06-55.5-89.9 9.6-20.01 12.53-42.37 8.45-64.66-7.68-42-42.39-76.46-84.4-83.8-65.71-11.47-123.81 38.73-123.81 103.36 0 16.51 3.76 32.33 11.18 47.01 15.25 30.17-6.19 87.99-56.46 87.99h-.29c-51.986-.278-97.642 39.787-104.46 90.52-8.6 64.01 40.97 119.48 104.03 119.48 41.66 0 79.41-24.65 96.17-62.8 7.53-17.14 28.94-28.22 54.54-28.22 25.95 0 47.59 11.08 55.12 28.22 16.76 38.15 54.51 62.8 96.17 62.8 63.06 0 112.629-55.46 104.03-119.48zm-406.031 59.48c-24.81 0-45-20.19-45-45s20.19-45 45-45 45 20.19 45 45-20.19 45-45 45zm151-90c-24.81 0-45-20.19-45-45s20.19-45 45-45 45 20.19 45 45-20.19 45-45 45zm0-150c-24.81 0-45-20.19-45-45s20.19-45 45-45 45 20.19 45 45-20.19 45-45 45zm151 240c-24.81 0-45-20.19-45-45s20.19-45 45-45 45 20.19 45 45-20.189 45-45 45z' fill='%23ffffff' data-original='%23000000' style='' class=''/%3E%3Ccircle xmlns='http://www.w3.org/2000/svg' cx='407.002' cy='376.003' r='15' fill='%23ffffff' data-original='%23000000' style='' class=''/%3E%3Ccircle xmlns='http://www.w3.org/2000/svg' cx='105.002' cy='376.003' r='15' fill='%23ffffff' data-original='%23000000' style='' class=''/%3E%3Ccircle xmlns='http://www.w3.org/2000/svg' cx='256.002' cy='286.003' r='15' fill='%23ffffff' data-original='%23000000' style='' class=''/%3E%3Ccircle xmlns='http://www.w3.org/2000/svg' cx='256.002' cy='136.003' r='15' fill='%23ffffff' data-original='%23000000' style='' class=''/%3E%3C/g%3E%3C/svg%3E%0A");
+  animation: spin 0.5s linear infinite;
+  width: 1.3em;
+  height: 1.3em;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.hidden{
+  display: none;
+}
+
+header{
+  text-align: center;
+}
+
+#images{
+  margin: 4rem 0;
+  column-count: 3;
+  column-gap: 1em;  
+}
+#images > div{
+  break-inside: avoid-column;
+}
+
+img{
+  max-width: 100%;
+}
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+
